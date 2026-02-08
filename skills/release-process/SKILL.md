@@ -2,6 +2,7 @@
 name: release-process
 description: Erstellt Releases (Stable, Insiders, Development) mit Single-Branch-Workflow (nur main). Nutze diesen Skill wenn der Benutzer eine Version erstellen oder releasen möchte.
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep
+disable-model-invocation: true
 ---
 
 # Release Process
