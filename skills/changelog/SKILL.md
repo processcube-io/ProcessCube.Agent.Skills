@@ -1,3 +1,9 @@
+---
+name: changelog
+description: Erstellt oder aktualisiert ein Changelog aus der Git-Historie, gruppiert nach Versionen und kategorisiert nach Feature-Typ. Nutze diesen Skill wenn der Benutzer ein Changelog erstellen, aktualisieren oder generieren möchte.
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep
+---
+
 # Skill: changelog
 
 Erstellt oder aktualisiert ein Changelog aus der Git-Historie, gruppiert nach Versionen und kategorisiert nach Feature-Typ.

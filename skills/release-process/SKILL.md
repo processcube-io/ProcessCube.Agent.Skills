@@ -2,6 +2,7 @@
 name: release-process
 description: Erstellt Releases (Stable, Insiders, Development) mit Single-Branch-Workflow (nur main). Nutze diesen Skill wenn der Benutzer eine Version erstellen oder releasen möchte.
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep
+disable-model-invocation: true
 ---
 
 # Release Process
@@ -69,55 +70,14 @@ git status --porcelain
 - Wenn Tags existieren: Nummer hochzählen (z.B. `1.1.0-develop.5` → `1.1.0-develop.6`)
 - Wenn keine existieren: Starte mit `.1` (z.B. `1.1.0-develop.1`)
 
-### 4. Changelog generieren
+### 4. Changelog generieren (PFLICHT)
 
-Erstelle/aktualisiere `CHANGELOG.md` aus Nutzersicht:
+**Führe vor dem Release den Changelog-Skill aus.** Lies dazu die Datei `skills/changelog/SKILL.md` und befolge die darin beschriebenen Anweisungen vollständig.
 
-**Stable:**
-```markdown
-## [1.2.0] - 2025-01-14
-
-### Neue Features
-- Beschreibung aus Nutzersicht
-
-### Verbesserungen
-- Beschreibung
-
-### Behobene Fehler
-- Beschreibung
-
-### Breaking Changes
-- Beschreibung
-```
-
-**Insiders:** (Beispiel bei Stable 1.0.0)
-```markdown
-## [1.1.0-insiders.2] - 2025-01-14
-
-**Insiders-Vorschauversion** - Für Feedback und Early Testing
-
-### Experimentelle Features
-- Beschreibung
-
-### Bekannte Einschränkungen
-- Beschreibung
-```
-
-**Development:** (Beispiel bei Stable 1.0.0)
-```markdown
-## [1.1.0-develop.3] - 2025-01-14
-
-**Development Build** - Nur für Tests
-
-### Implementiert
-- Beschreibung
-
-### In Arbeit
-- Beschreibung
-
-### Bekannte Probleme
-- Beschreibung
-```
+- Zielgruppe: **Anwender** (Changelog aus Nutzersicht)
+- Modus: **Aktualisieren** (nur neue Änderungen seit letztem Eintrag)
+- Stelle sicher, dass alle Commits seit dem letzten Tag im Changelog dokumentiert sind
+- **Erst wenn der Changelog erfolgreich aktualisiert wurde, fahre mit Schritt 5 fort**
 
 ### 5. Version aktualisieren
 
