@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **Claude Skills Marketplace** for ProcessCube release management. It provides Claude with structured instructions (as SKILL.md files) to automate semantic versioning, changelog generation, and releases for ProcessCube components. The project is entirely documentation-driven — there is no build system, no runtime code, and no tests.
+This is an **Agent Skills marketplace** for ProcessCube development workflows. It provides coding agents (Claude Code, Codex, OpenClaw) with structured instructions (as SKILL.md files) to automate semantic versioning, changelog generation, documentation, and releases for ProcessCube components. The project is entirely documentation-driven — there is no build system, no runtime code, and no tests.
 
 **Owner:** ProcessCube UG
 **Language:** All documentation and skills are written in German.
@@ -17,6 +17,9 @@ skills/
     SKILL.md               # Changelog generation skill
   release-process/
     SKILL.md               # Release process workflow skill
+  repo-doku/
+    SKILL.md               # Repo documentation skill (README/DEVELOPMENT)
+    references/            # Bundled reference files (doku-ziel.md, konventionen.md)
 CLAUDE.md                  # Project guidance for Claude Code
 README.md                  # Installation and usage guide (German)
 ```
