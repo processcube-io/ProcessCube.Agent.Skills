@@ -1,6 +1,6 @@
-# ProcessCube Claude Skills Marketplace
+# ProcessCube Agent Skills
 
-Skills für Claude Code zur Automatisierung von Release-Management und Changelog-Generierung bei ProcessCube-Komponenten.
+Skills zur Automatisierung von Entwickler-Workflows wie Release-Management, Changelog-Generierung und Dokumentation. Die Skills folgen dem Agent Skills Open Standard und funktionieren mit kompatiblen Coding-Agenten (z.B. Claude Code, Codex, OpenClaw).
 
 ## Verfügbare Skills
 
@@ -8,32 +8,35 @@ Skills für Claude Code zur Automatisierung von Release-Management und Changelog
 |-------|-------------|----------|
 | **release-process** | Erstellt Releases (Stable, Insiders, Development) mit Single-Branch-Workflow (nur `main`) | `/release-process` oder "Erstelle ein Release" |
 | **changelog** | Erstellt oder aktualisiert ein Changelog aus der Git-Historie | `/changelog` oder "Erstelle ein Changelog" |
+| **repo-doku** | Erstellt/aktualisiert die Doku (README, ggf. DEVELOPMENT) im Quell-Repo aus Commits, Changelog und Quellcode | `/repo-doku` oder "Aktualisiere das README" |
 
 ## Installation
 
 ### Alle Skills installieren
 
 ```bash
-npx skills add processcube-io/ProcessCube.Claude.Development.Marketplace
+npx skills add processcube-io/ProcessCube.Agent.Skills
 ```
 
 ### Einzelnen Skill installieren
 
 ```bash
-npx skills add processcube-io/ProcessCube.Claude.Development.Marketplace --skill changelog
-npx skills add processcube-io/ProcessCube.Claude.Development.Marketplace --skill release-process
+npx skills add processcube-io/ProcessCube.Agent.Skills --skill changelog
+npx skills add processcube-io/ProcessCube.Agent.Skills --skill release-process
+npx skills add processcube-io/ProcessCube.Agent.Skills --skill repo-doku
 ```
 
 ### Manuelle Installation
 
 1. Repository klonen:
    ```bash
-   git clone https://github.com/processcube-io/ProcessCube.Claude.Development.Marketplace.git
+   git clone https://github.com/processcube-io/ProcessCube.Agent.Skills.git
    ```
 2. Gewünschte Skills nach `.claude/skills/` im Zielprojekt kopieren:
    ```bash
-   cp -r ProcessCube.Claude.Development.Marketplace/skills/release-process /path/to/project/.claude/skills/
-   cp -r ProcessCube.Claude.Development.Marketplace/skills/changelog /path/to/project/.claude/skills/
+   cp -r ProcessCube.Agent.Skills/skills/release-process /path/to/project/.claude/skills/
+   cp -r ProcessCube.Agent.Skills/skills/changelog /path/to/project/.claude/skills/
+   cp -r ProcessCube.Agent.Skills/skills/repo-doku /path/to/project/.claude/skills/
    ```
 
 ## Updates
@@ -44,7 +47,7 @@ npx skills update
 
 ## Verwendung
 
-Nach der Installation stehen die Skills in Claude Code als Slash-Commands zur Verfügung:
+Nach der Installation stehen die Skills im Coding-Agenten als Slash-Commands zur Verfügung (bzw. werden bei `repo-doku` automatisch über die Beschreibung erkannt):
 
 ### Release erstellen
 
@@ -61,6 +64,14 @@ Claude führt durch den Release-Prozess: Branch prüfen, Version bestimmen, Chan
 ```
 
 Claude erstellt oder aktualisiert das Changelog aus der Git-Historie, wahlweise für Anwender oder Entwickler.
+
+### Doku im Repo erstellen
+
+```
+/repo-doku
+```
+
+Der Agent wertet vorhandene Doku, Changelog, Git-Commits seit dem letzten Doku-Stand und den Quellcode aus und aktualisiert das README (bei größeren Projekten zusätzlich `DEVELOPMENT.md`) minimal-invasiv. Ist die Doku bereits aktuell, wird bewusst nichts geändert.
 
 ## Autor
 
