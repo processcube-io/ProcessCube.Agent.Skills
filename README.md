@@ -55,7 +55,7 @@ Nach der Installation stehen die Skills im Coding-Agenten als Slash-Commands zur
 /release-process
 ```
 
-Claude führt durch den Release-Prozess: Branch prüfen, Version bestimmen, Changelog generieren, Tag erstellen und pushen.
+Der Agent führt durch den Release-Prozess: Branch prüfen, Version bestimmen, Changelog generieren, Tag erstellen und pushen.
 
 ### Changelog generieren
 
@@ -63,7 +63,7 @@ Claude führt durch den Release-Prozess: Branch prüfen, Version bestimmen, Chan
 /changelog
 ```
 
-Claude erstellt oder aktualisiert das Changelog aus der Git-Historie, wahlweise für Anwender oder Entwickler.
+Der Agent erstellt oder aktualisiert das Changelog aus der Git-Historie, wahlweise für Anwender oder Entwickler.
 
 ### Doku im Repo erstellen
 
