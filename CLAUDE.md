@@ -37,7 +37,7 @@ disable-model-invocation: true   # Optional: only trigger manually via slash com
 ---
 ```
 
-The rest of the file contains markdown instructions that Claude executes.
+The rest of the file contains markdown instructions that the agent executes.
 
 ### Versioning (Single-Branch)
 
