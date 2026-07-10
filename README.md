@@ -26,6 +26,18 @@ npx skills add processcube-io/ProcessCube.Agent.Skills --skill release-process
 npx skills add processcube-io/ProcessCube.Agent.Skills --skill repo-doku
 ```
 
+### Für bestimmte Agenten ohne Rückfrage installieren
+
+Mit `-a <agent>` wird gezielt für einen oder mehrere Agenten installiert, `-y` überspringt alle Rückfragen (nicht-interaktiv):
+
+```bash
+npx skills add processcube-io/ProcessCube.Agent.Skills --all -a openclaw -a codex -a claude-code -y
+```
+
+- `--all` – alle Skills installieren
+- `-a <agent>` – Ziel-Agent (mehrfach angebbar: `openclaw`, `codex`, `claude-code`)
+- `-y` – alle Rückfragen automatisch bestätigen
+
 ### Manuelle Installation
 
 1. Repository klonen:
